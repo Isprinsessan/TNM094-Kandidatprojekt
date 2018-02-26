@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/kandidaten.unity
+- path: Assets/Lobby.unity
   isLoaded: 1
   isActive: 1

@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 public class PlayerController : NetworkBehaviour {
 
     public GameObject bulletPrefab;
+    public GameObject playerBasePrefab;
 
     public float rotationSpeed = 45.0f;
     public float speed = 2.0f;
@@ -17,9 +18,19 @@ public class PlayerController : NetworkBehaviour {
     protected float _rotation = 0;
     protected float _acceleration = 0;
 
+    
+    //[SyncVar]
+    public bool hasFlag = false;
+
+    private bool ranOnce = false;
+
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.blue;
+
+        //CmdSpawnBase();
+
+        
     }
     [Command]
     void CmdFire()
@@ -40,10 +51,27 @@ public class PlayerController : NetworkBehaviour {
         // when the bullet is destroyed on the server it will automaticaly be destroyed on clients
         Destroy(bullet, 2.0f);
     }
+    
+    //every player should have a base
+    [Command]
+    void CmdSpawnBase()
+    {
+        var playerBase = (GameObject)Instantiate(
+             playerBasePrefab,
+             transform.position - transform.forward*5.5f,
+              Quaternion.Euler(0, transform.rotation.y+90, 0));
+        
+
+        // spawn the base on the clients and give authority
+        NetworkServer.Spawn(playerBase);
+        playerBase.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+    } 
+
     // Use this for initialization
     void Start () {
         if(isLocalPlayer)
         {
+            
             _rigidbody = GetComponent<Rigidbody>();
             Camera.main.transform.position = transform.position - transform.forward * 10 + transform.up * 3;
             Camera.main.transform.LookAt(transform.position);
@@ -52,12 +80,21 @@ public class PlayerController : NetworkBehaviour {
         }
 		
 	}
-
+    
     // Update is called once per frame
     [ClientCallback]
     void Update () {
         if (!isLocalPlayer)
             return;
+        
+       if(ranOnce==false)
+        {
+            CmdSpawnBase();
+            ranOnce = true;
+
+        }
+        //spawn the player's base (return flags to the base)
+
         /*
         _rotation = Input.GetAxis("Horizontal");
         //_acceleration = Input.GetAxis("Vertical");
@@ -75,10 +112,11 @@ public class PlayerController : NetworkBehaviour {
         //end of stolen code section
 
 
-        var x = Input.GetAxis("Horizontal") * 0.1f;
+        var x = Input.GetAxis("Horizontal") ;
         var z = Input.GetAxis("Vertical") * 0.1f;
 
-        transform.Translate(x, 0, z); 
+        transform.Rotate(0, x, 0);
+        transform.Translate(0, 0, z); 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {// Command function is called from the client, but invoked on the server

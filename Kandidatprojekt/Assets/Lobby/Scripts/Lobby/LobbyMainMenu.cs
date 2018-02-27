@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using UnityEngine.Networking;
 namespace Prototype.NetworkLobby
 {
     //Main menu, mainly only a bunch of callback called by the UI (setup throught the Inspector)
@@ -14,6 +14,10 @@ namespace Prototype.NetworkLobby
 
         public InputField ipInput;
         public InputField matchNameInput;
+
+        //from copy pasta
+        public NetworkDiscovery discovery;
+
 
         public void OnEnable()
         {
@@ -54,8 +58,33 @@ namespace Prototype.NetworkLobby
             lobbyManager.SetServerInfo("Dedicated Server", lobbyManager.networkAddress);
         }
 
+
+
+        //copy pasta , removed override
+        public void OnStartHost()
+        {
+            discovery.Initialize();
+            discovery.StartAsServer();
+
+        }
+
+        public void OnStartClient(NetworkClient client)
+        {
+            discovery.showGUI = false;
+        }
+
+        public void OnStopClient()
+        {
+            discovery.StopBroadcast();
+            discovery.showGUI = true;
+        }
+
+        // edit here to network discovery instead, start broadcasting (StartAsServer function instead of the below)
         public void OnClickCreateMatchmakingGame()
         {
+                      
+            
+          
             lobbyManager.StartMatchMaker();
             lobbyManager.matchMaker.CreateMatch(
                 matchNameInput.text,
@@ -69,6 +98,8 @@ namespace Prototype.NetworkLobby
             lobbyManager.DisplayIsConnecting();
 
             lobbyManager.SetServerInfo("Matchmaker Host", lobbyManager.matchHost);
+
+            
         }
 
         public void OnClickOpenServerList()

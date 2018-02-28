@@ -150,12 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1645537577461282, guid: 23bb7dcad6a6eda41ae2093c5767fd93,
     type: 2}
-  playerBasePrefab: {fileID: 1379298650795610, guid: 2274be37b7236e14fb78c98466578bae,
+  playerBasePrefab: {fileID: 1376132301278778, guid: 2274be37b7236e14fb78c98466578bae,
     type: 2}
-  rotationSpeed: 45
-  speed: 2
-  maxSpeed: 3
   hasFlag: 0
+  score: 0
 --- !u!114 &114503785375105088
 MonoBehaviour:
   m_ObjectHideFlags: 1

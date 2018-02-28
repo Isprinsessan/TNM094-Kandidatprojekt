@@ -9,28 +9,22 @@ public class PlayerController : NetworkBehaviour {
     public GameObject bulletPrefab;
     public GameObject playerBasePrefab;
 
-    public float rotationSpeed = 45.0f;
-    public float speed = 2.0f;
-    public float maxSpeed = 3.0f;
-
     protected Rigidbody _rigidbody;
 
-    protected float _rotation = 0;
-    protected float _acceleration = 0;
-
-    
-    //[SyncVar]
     public bool hasFlag = false;
 
     private bool ranOnce = false;
 
+    //id of base to check if the current base is yours in BaseCollision
+    public NetworkInstanceId baseId;
+
+    //we sync the score to be able to show it to every other client (just a thought not 100% sure it's implemented like this)
+    [SyncVar]
+    public int score = 0;
+
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.blue;
-
-        //CmdSpawnBase();
-
-        
     }
     [Command]
     void CmdFire()
@@ -60,11 +54,13 @@ public class PlayerController : NetworkBehaviour {
              playerBasePrefab,
              transform.position - transform.forward*5.5f,
               Quaternion.Euler(0, transform.rotation.y+90, 0));
-        
 
-        // spawn the base on the clients and give authority
+
         NetworkServer.Spawn(playerBase);
-        playerBase.GetComponent<NetworkIdentity>().AssignClientAuthority(connectionToClient);
+        print(playerBase.GetComponent<NetworkIdentity>().netId);
+        baseId = playerBase.GetComponent<NetworkIdentity>().netId; 
+        
+        
     } 
 
     // Use this for initialization
@@ -86,43 +82,30 @@ public class PlayerController : NetworkBehaviour {
     void Update () {
         if (!isLocalPlayer)
             return;
-        
-       if(ranOnce==false)
+
+       //every client should spawn their own base.
+       if(ranOnce==false && ClientScene.ready )
         {
             CmdSpawnBase();
             ranOnce = true;
 
-        }
-        //spawn the player's base (return flags to the base)
-
-        /*
-        _rotation = Input.GetAxis("Horizontal");
-        //_acceleration = Input.GetAxis("Vertical");
-
-        //stolen code from NetworkSpaceship
-        Quaternion rotation = _rigidbody.rotation * Quaternion.Euler(0, _rotation * rotationSpeed * Time.fixedDeltaTime, 0);
-        _rigidbody.MoveRotation(rotation);
-
-        //_rigidbody.AddForce((rotation * new Vector3(0,0,1)) * _acceleration * 1000.0f * speed * Time.deltaTime);
-        
-        if (_rigidbody.velocity.magnitude > maxSpeed * 1000.0f)
-        {
-            _rigidbody.velocity = _rigidbody.velocity.normalized * maxSpeed * 1000.0f;
-        } */
-        //end of stolen code section
+        } 
 
 
-        var x = Input.GetAxis("Horizontal") ;
-        var z = Input.GetAxis("Vertical") * 0.1f;
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical") * 0.5f;
 
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z); 
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {// Command function is called from the client, but invoked on the server
+        {
+            // Command function is called from the client, but invoked on the server
             CmdFire();
         }
+      
     }
     
+
 }
 

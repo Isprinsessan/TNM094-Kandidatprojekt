@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/LucasRung/.android/build-cache/2d9f7d1843c71ff7176f9b055a3852b74aee1013/output/jars/libs/VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1e5c98f1d2f1973f9a08b7849f319bcb135fe8c3">
+        <dex dex="/Users/LucasRung/Documents/kandidat/Kandidatprojekt2018/Kandidatprojekt/Temp/gradleOut/build/intermediates/pre-dexed/release/VuforiaUnityPlayer_566635c5794c611985f942b96f289f4f197c30dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/LucasRung/.android/build-cache/2d9f7d1843c71ff7176f9b055a3852b74aee1013/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e29373b760f2999cd878625efe4641edd156a3d0">
+        <dex dex="/Users/LucasRung/Documents/kandidat/Kandidatprojekt2018/Kandidatprojekt/Temp/gradleOut/build/intermediates/pre-dexed/release/classes_e9511bae65696b4a54485ceb7789547610406839.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/LucasRung/.android/build-cache/2d9f7d1843c71ff7176f9b055a3852b74aee1013/output/jars/libs/Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6051ae41196664b2d1144cd0f1e5626d09390520">
+        <dex dex="/Users/LucasRung/Documents/kandidat/Kandidatprojekt2018/Kandidatprojekt/Temp/gradleOut/build/intermediates/pre-dexed/release/Vuforia_374c1d66b1201f00583ad3093406a7a172efd96b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/LucasRung/Documents/kandidat/Kandidatprojekt2018/Kandidatprojekt/Temp/gradleOut/libs/unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2d302418aa3482b8db770278260340aed47dd37a">
+        <dex dex="/Users/LucasRung/Documents/kandidat/Kandidatprojekt2018/Kandidatprojekt/Temp/gradleOut/build/intermediates/pre-dexed/release/unity-classes_20f6a551c744ef678cf1d9d8ca9dbc7f28aff4ff.jar" />
+    </item>
+
+</items>

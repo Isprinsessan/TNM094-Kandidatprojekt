@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kandidatprojekt", "Kandidatprojekt.csproj", "{EE9B7E5E-393B-5111-EF50-DF647344A3B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kandidatprojekt.Editor", "Kandidatprojekt.Editor.csproj", "{0D0B04D2-1DAC-712A-6AE2-4AC4CCD1E9D2}"

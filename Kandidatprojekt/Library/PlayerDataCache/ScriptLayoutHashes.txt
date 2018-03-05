@@ -222,7 +222,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 9e8935bc7a7ce00d3aae2531b559e968 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyPlayerList
 bb0e90c53f2e02b26cd04e662f658169 Assembly-CSharp.dll:.NetworkAsteroid
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
-5e7f18e9e81edd704f4487c4481efc11 Assembly-CSharp.dll:.PlayerController
+1b99a3bbe7e886190d054ac07c474806 Assembly-CSharp.dll:.PlayerController
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -230,6 +230,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Bullet
 dc5fa02202409049bc420a7b6efe5183 Assembly-CSharp.dll:.NetworkSpaceship
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NetworkLobbyHook2
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 49bc25332253c576faf00a6092e78186 Assembly-CSharp.dll:.EnemySpawner
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel

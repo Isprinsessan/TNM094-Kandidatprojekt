@@ -326,6 +326,7 @@
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\FlagSpawner.cs" />
     <Compile Include="Assets\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\NetworkLobbyHook2.cs" />
     <Compile Include="Assets\Scripts\OnCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>

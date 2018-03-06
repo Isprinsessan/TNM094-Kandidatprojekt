@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kandidatprojekt (4) (3)", "Kandidatprojekt (4) (3).csproj", "{DE09F03D-08A3-64B3-796A-B01C8E373591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kandidatprojekt (4) (3).Editor", "Kandidatprojekt (4) (3).Editor.csproj", "{FEFCD339-C019-5CE3-A0A3-9D832FD1D61F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE09F03D-08A3-64B3-796A-B01C8E373591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE09F03D-08A3-64B3-796A-B01C8E373591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE09F03D-08A3-64B3-796A-B01C8E373591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE09F03D-08A3-64B3-796A-B01C8E373591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFCD339-C019-5CE3-A0A3-9D832FD1D61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFCD339-C019-5CE3-A0A3-9D832FD1D61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFCD339-C019-5CE3-A0A3-9D832FD1D61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFCD339-C019-5CE3-A0A3-9D832FD1D61F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

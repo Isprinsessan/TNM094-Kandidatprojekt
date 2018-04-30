@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9e43e50b5a9976f47bfe656c12b4d76b
+timeCreated: 1520321309
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_mine: {fileID: 54826905066307228, guid: 800d1752d6480274ba1f5fbb920a740e, type: 2}
+  - m_FireTransform: {instanceID: 0}
+  - m_AimSlider: {instanceID: 0}
+  - m_ShootingAudio: {instanceID: 0}
+  - m_ChargingClip: {instanceID: 0}
+  - m_FireClip: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
